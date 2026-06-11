@@ -1,12 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-struct Perguntas{
+struct alternativas{
     char enunciado[200];
-    char perguntas[100]{3};
+    char perguntas[3][100];
     int correta;
 };
 
+void AbrirPorta(struct alternativas banco[]) {
+    int sorteada = rand() % 3;
+    printf("%s\n", banco[sorteada].enunciado);
+}
+
+
 int main(){
+    srand(time(NULL));
+    struct alternativas bancoP1[3] = {
+    {"Quanto e 7 + 8?", {"a) 13", "b) 15", "c) 16"},2},
+    {"Quanto e 9 x 6?", {"a) 54", "b) 56", "c) 45"},1},
+    {"Quanto e 100 - 37?", {"a) 67", "b) 63", "c) 73"},2}
+    };
+
+    struct alternativas bancoP2[3] = {
+    {"Sou par, maior que 4 e menor que 8. Quem sou?", {"a) 5", "b) 6", "c) 7"},2},
+    {"Quanto mais se tira de mim, maior eu fico. O que sou?", {"a) Um Buraco", "b) Uma Sombra", "c) Uma Montanha"},1},
+    {"Tenho cidades mas não casas, montanhas mas não árvores, água mas não peixes. O que sou?", {"a) Um Mapa", "b) Um Deserto", "c) Um Livro"},1}
+    };
+
+    struct alternativas bancoP3[3] = {
+    {"Complete a sequência: 1, 2, 4, 8, ...? ", {"a) 10", "b) 16", "c) 12"},2},
+    {"Se todo A é B, e todo B é C, então todo A é...? ", {"a) C", "b) nenhum", "c) so as vezes"},1},
+    {"Qual vem depois: 5, 10, 15, 20, ...?", {"a) 22", "b) 25", "c) 30"},2}
+    };
     int opcao = 0;
 
     printf("A escuridão e total. Você nao lembra como chegou aqui.\n");
@@ -35,13 +61,13 @@ int main(){
 
         switch (opcao){
             case 1:
-                printf("1..\n");
+                AbrirPorta(bancoP1);
                 break;
             case 2:
-                printf("2..\n");
+                AbrirPorta(bancoP2);
                 break;
             case 3:
-                printf("3..\n");
+                AbrirPorta(bancoP3);
                 break;
             case 9:
                 jogando = 0;
@@ -49,7 +75,8 @@ int main(){
             default:
                 printf("opcao invalida\n");
         }
+    
     }
-
+    
     return 0;
 }
