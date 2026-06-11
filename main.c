@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+struct Perguntas{
+    char enunciado[200];
+    char perguntas[100]{3};
+    int correta;
+};
+
 int main(){
     int opcao = 0;
 
