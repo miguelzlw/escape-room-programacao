@@ -8,9 +8,24 @@ struct alternativas{
     int correta;
 };
 
-void AbrirPorta(struct alternativas banco[]) {
+int AbrirPorta(struct alternativas banco[]) {
     int sorteada = rand() % 3;
+    int resposta;
+
     printf("%s\n", banco[sorteada].enunciado);
+    printf("%s\n", banco[sorteada].perguntas[0]);
+    printf("%s\n", banco[sorteada].perguntas[1]);
+    printf("%s\n", banco[sorteada].perguntas[2]);
+
+    printf("Sua resposta (1, 2 ou 3): ");
+    scanf("%d", &resposta);
+
+
+    if (resposta == banco[sorteada].correta) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 
@@ -51,6 +66,9 @@ int main(){
     printf("O livro se fecha sozinho. Tres portas surgem na parede.\n");
 
     int jogando = 1;
+    int resposta;
+    int RespostaCorreta;
+    
     while (jogando == 1){
         printf("Digite o numero da porta que deseja entrar: \n");
         printf("1 - Porta dos Números\n");
@@ -61,15 +79,36 @@ int main(){
 
         switch (opcao){
             case 1:
-                AbrirPorta(bancoP1);
-                break;
+                printf("[Voce entra na Porta dos Numeros]\n");
+            if (AbrirPorta(bancoP1) == 1) {
+                printf("Acertou! A porta abre.\n");
+            }
+            else {
+                printf("Errou, porta trancada!\n");
+            }
+            break;
+            
             case 2:
-                AbrirPorta(bancoP2);
-                break;
+                printf("[Voce entra na Porta do Segredo]\n");
+            if (AbrirPorta(bancoP2) == 1) {
+                printf("Acertou! A porta abre.\n");
+            }
+            else {
+                printf("Errou, porta trancada!\n");
+            }
+            break;
+            
             case 3:
-                AbrirPorta(bancoP3);
-                break;
+                printf("[Voce entra na Porta do Codigo]\n");
+            if (AbrirPorta(bancoP3) == 1) {
+                printf("Acertou! A porta abre.\n");
+            }
+            else {
+                printf("Errou, porta trancada!\n");
+            }
+            break;
             case 9:
+            printf("Voce desistiu e ficou preso para sempre!\n");
                 jogando = 0;
                 break;
             default:
