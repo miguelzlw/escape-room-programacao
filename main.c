@@ -64,10 +64,12 @@ int main(){
     printf("O livro se fecha sozinho. Tres portas surgem na parede.\n");
 
     int jogando = 1;
-    int resolvida[3] = {0, 0, 0}; 
+    int resolvida[3] = {0, 0, 0};   
+    int vidas = 3;                  
 
     while (jogando == 1){
-        printf("\nDigite o numero da porta que deseja entrar:\n");
+        printf("\nVidas: %d\n", vidas);
+        printf("Digite o numero da porta que deseja entrar:\n");
         printf("1 - Porta dos Numeros\n");
         printf("2 - Porta do Segredo\n");
         printf("3 - Porta do Codigo\n");
@@ -82,6 +84,7 @@ int main(){
                     resolvida[0] = 1;
                 } else {
                     printf("Errou, porta trancada!\n");
+                    vidas--;
                 }
                 break;
 
@@ -92,6 +95,7 @@ int main(){
                     resolvida[1] = 1;
                 } else {
                     printf("Errou, porta trancada!\n");
+                    vidas--;
                 }
                 break;
 
@@ -102,6 +106,7 @@ int main(){
                     resolvida[2] = 1;
                 } else {
                     printf("Errou, porta trancada!\n");
+                    vidas--;
                 }
                 break;
 
@@ -119,6 +124,13 @@ int main(){
             printf("Uma luz dourada toma a sala e o caminho de volta aparece.\n");
             printf("Voce resolveu todos os enigmas e escapou da Outra Dimensao.\n");
             printf("VOCE VENCEU!\n");
+            jogando = 0;
+        }
+
+        if (vidas == 0) {
+            printf("\nSuas forcas se esgotam e a escuridao avanca sobre voce.\n");
+            printf("A Outra Dimensao se fecha. Voce ficou preso para sempre.\n");
+            printf("GAME OVER.\n");
             jogando = 0;
         }
     }
