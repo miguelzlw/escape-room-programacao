@@ -1,9 +1,0 @@
-# Executaveis compilados
-main
-escape
-*.exe
-*.o
-*.out
-
-# Config do editor
-.vscode/
