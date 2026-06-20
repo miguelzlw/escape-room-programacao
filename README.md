@@ -15,9 +15,11 @@ Três portas seladas por enigmas surgem na escuridão:
 - **Porta do Código** — perguntas de lógica
 
 ![Tela inicial do jogo]()
+<img width="658" height="424" alt="image" src="https://github.com/user-attachments/assets/2a1f26ac-8aa5-4a60-a56a-ae1d55091bde" />
 
-![O livro revela a história e as portas surgem](<img width="715" height="523" alt="image" src="https://github.com/user-attachments/assets/eb7adf9c-3575-4ee8-ba5b-02a6c1b4d916" />
-)
+![O livro revela a história e as portas surgem]
+<img width="715" height="523" alt="image" src="https://github.com/user-attachments/assets/344da5b7-b956-4e50-aab0-4b1da5b76217" />
+
 
 ## Como jogar
 
